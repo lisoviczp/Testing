@@ -5,8 +5,10 @@
     <%= f.input :comment %>
     <%= f.input :due_date %>
     <%= f.input :price %>
-    <%= f.input :artist_id %>
-    <%= f.input :user_id %>
+    <%= f.association :artist, prompt: "Select artist" %>
+    <%= f.association :user, prompt: "Select user" %>
+    <%= f.input :accepted,     as: :radio_buttons %>
+
   </div>
 
   <div class="form-actions">

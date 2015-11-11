@@ -10,5 +10,23 @@
   <%= @artist.email %>
 </p>
 
+<p> 
+	<strong> messages </strong></br>
+	<% Message.all.each do |message| %>
+		<% if message.artist == @artist %>
+			<%= message.comment %> </br>
+			<%= message.due_date %></br>
+			<%= message.price %></br>
+			<%= message.user.first_name %> </br>
+			<% if message.accepted %> 	
+				Accepted!
+			<% else %>
+				Declined!
+			<% end %>
+
+		<% end %>
+	<% end %>
+</p>
+
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
