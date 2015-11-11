@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<style>
+.grid-item { width: 300px; }
+.grid-item--width2 { width: 400px; }
+
+</style>
+
+
+<script src="/Users/phillipl/Desktop/rails_sites/arty/app/assets/javascripts/masonry.pkgd.min.js"></script>
+
+<h1>Listing Pieces</h1>
+
+
+<div class="container-fluid">
+  <div class="grid js-masonry"
+    data-masonry-options='{ "itemSelector": ".grid-item", "columnWidth": 320 }'>
+        <% @pieces.each do |piece| %>
+          <div class="grid-item"><%= image_tag piece.image.url(:medium) %></div> </br>
+        </br>
+      <% end %>
+  </div>
+</div>
+
+
+<br>
+
+
+<%= link_to 'New Piece', new_piece_path %>

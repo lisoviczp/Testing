@@ -1,0 +1,38 @@
+<%= simple_form_for(@piece) do |f| %>
+  <% if @piece.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@piece.errors.count, "error") %> prohibited this piece from being saved:</h2>
+
+      <ul>
+      <% @piece.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <% f.association :user, label_method: :first_name, prompt: 'Artist' %>
+    <%= f.input :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+<% end %>
+

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @piece.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @piece.description %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+	<%= @piece.description %>
+	<%= image_tag @piece.image.url(:medium) %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+	<%= @piece.user %>
+</p>
+
+<%= link_to 'Edit', edit_piece_path(@piece) %> |
+<%= link_to 'Back', pieces_path %>
