@@ -1,0 +1,5 @@
+
+<h1> <%= @establishment.name %> </h1>
+<h1> <%= @establishment.city %> </h1>
+<%= link_to "favorite",   favorite_establishment_path(@establishment, type: "favorite"), method: :put %> </br>
+<%= link_to "unfavorite",   favorite_establishment_path(@establishment, type: "unfavorite"), method: :put %> </br>

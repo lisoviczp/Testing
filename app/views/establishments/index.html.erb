@@ -1,0 +1,12 @@
+
+
+<% @establishments.each do |establishment| %>
+	<%= establishment.name %> </br>
+	<%= link_to "favorite",   favorite_establishment_path(establishment, type: "favorite"), method: :put %> </br>
+	<%= link_to "unfavorite", favorite_establishment_path(establishment, type: "unfavorite"), method: :put %> </br></br>
+	</hr>
+
+<% end %>
+
+
+
