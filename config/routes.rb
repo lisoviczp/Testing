@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :artists
   resources :users
   resources :pieces
+  post 'twilio/voice' => 'twilio#voice'
 
   resources :establishments do
     put :favorite, on: :member

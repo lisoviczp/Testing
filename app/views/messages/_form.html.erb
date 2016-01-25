@@ -1,17 +1,19 @@
-<%= simple_form_for(@message) do |f| %>
-  <%= f.error_notification %>
+<div class="new">
+  <%= simple_form_for(@message) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :comment %>
-    <%= f.input :due_date %>
-    <%= f.input :price %>
-    <%= f.association :artist, prompt: "Select artist" %>
-    <%= f.association :user, prompt: "Select user" %>
-    <%= f.input :accepted,     as: :radio_buttons %>
+    <div class="form-inputs">
+      <%= f.input :comment %>
+      <%= f.input :due_date %>
+      <%= f.input :price %>
+      <%= f.association :artist, prompt: "Select artist" %>
+      <%= f.association :user, prompt: "Select user" %>
+      <%= f.input :accepted,     as: :radio_buttons %>
 
-  </div>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>

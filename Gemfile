@@ -40,6 +40,7 @@ gem "binding_of_caller"
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'roadie'
 gem 'roadie-rails'
+gem 'twilio-ruby'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

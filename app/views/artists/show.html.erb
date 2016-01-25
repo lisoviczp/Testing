@@ -10,6 +10,11 @@
   <%= @artist.email %>
 </p>
 
+<p>
+  <strong>Number:</strong>
+  <%= @artist.phone_number %>
+</p>
+
 <p> 
 	<strong> messages </strong></br>
 	<% Message.all.each do |message| %>

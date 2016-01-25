@@ -1,10 +1,30 @@
+require 'twilio-ruby'
+
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
 
   # GET /artists
   # GET /artists.json
   def index
+    # redirect_to send_text_message and return
     @artists = Artist.all
+  end
+
+  def send_text_message
+    # number_to_send_to = params[:number_to_send_to]
+    # number_to_send_to = 9738680162
+
+    twilio_sid=""
+    twilio_token = ""
+    # twilio_phone_number = "2016853575"
+
+    @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
+
+    @twilio_client.account.sms.messages.create(
+      :from => "+1#{twilio_phone_number}",
+      :to => number_to_send_to,
+      :body => "This is an message. It gets sent to #{number_to_send_to}"
+    )
   end
 
   # GET /artists/1
@@ -69,6 +89,6 @@ class ArtistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artist_params
-      params.require(:artist).permit(:name, :email)
+      params.require(:artist).permit(:name, :email, :phone_number)
     end
 end
